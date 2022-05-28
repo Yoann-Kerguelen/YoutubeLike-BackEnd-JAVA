@@ -11,7 +11,14 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Table(name = "Suscriber")
 public class Suscriber implements Serializable {
 
@@ -27,43 +34,9 @@ public class Suscriber implements Serializable {
 	@ManyToMany(mappedBy = "suscribers")
 	private List<Channel> channelsSubscriptions;
 
-	public Suscriber() {
-	}
-
-	public Suscriber(long id, Youtuber youtuber, List<Channel> channelsSubscriptions) {
-		super();
-		this.id = id;
-		this.youtuber = youtuber;
-		this.channelsSubscriptions = channelsSubscriptions;
-	}
-
 	public Suscriber(Youtuber youtuber, List<Channel> channelsSubscriptions) {
 		super();
 		this.youtuber = youtuber;
-		this.channelsSubscriptions = channelsSubscriptions;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public Youtuber getYoutuber() {
-		return youtuber;
-	}
-
-	public void setYoutuber(Youtuber youtuber) {
-		this.youtuber = youtuber;
-	}
-
-	public List<Channel> getChannelsSubscriptions() {
-		return channelsSubscriptions;
-	}
-
-	public void setChannelsSubscriptions(List<Channel> channelsSubscriptions) {
 		this.channelsSubscriptions = channelsSubscriptions;
 	}
 
