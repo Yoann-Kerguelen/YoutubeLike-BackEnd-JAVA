@@ -12,4 +12,5 @@ import fr.yo.youtube.entities.Youtuber;
 @Repository
 public interface YoutuberRepository extends CrudRepository<Youtuber, Long> {
 
+	public Youtuber findByUsername(String username);
 }

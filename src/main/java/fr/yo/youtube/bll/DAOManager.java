@@ -11,21 +11,45 @@ import org.springframework.stereotype.Component;
 public class DAOManager {
 
 	@Autowired
-	YoutuberManager youtuberManager;
+	private YoutuberManager youtuberManager;
 
 	@Autowired
-	ChannelManager channelManager;
+	private ChannelManager channelManager;
 
 	@Autowired
-	VideoManager videoManager;
+	private VideoManager videoManager;
 
 	@Autowired
-	CategoryManager categoryManager;
+	private CategoryManager categoryManager;
 
 	@Autowired
-	ReviewsManager reviewsManager;
+	private ReviewsManager reviewsManager;
 
 	@Autowired
-	SuscriberManager suscriberManager;
+	private SuscriberManager suscriberManager;
+
+	public YoutuberManager getYoutuberManager() {
+		return youtuberManager;
+	}
+
+	public ChannelManager getChannelManager() {
+		return channelManager;
+	}
+
+	public VideoManager getVideoManager() {
+		return videoManager;
+	}
+
+	public CategoryManager getCategoryManager() {
+		return categoryManager;
+	}
+
+	public ReviewsManager getReviewsManager() {
+		return reviewsManager;
+	}
+
+	public SuscriberManager getSuscriberManager() {
+		return suscriberManager;
+	}
 
 }
