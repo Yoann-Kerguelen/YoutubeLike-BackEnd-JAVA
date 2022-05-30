@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import fr.yo.youtube.dao.IDAOYoutuber;
-import fr.yo.youtube.dao.hibernate.ChannelRepository;
 import fr.yo.youtube.dao.hibernate.YoutuberRepository;
-import fr.yo.youtube.entities.Channel;
 import fr.yo.youtube.entities.Youtuber;
 
 /**
@@ -23,9 +21,6 @@ public class DAOYoutuberRepository implements IDAOYoutuber {
 
 	@Autowired
 	YoutuberRepository youtuberRepository;
-
-	@Autowired
-	ChannelRepository channelRepository;
 
 	@Override
 	public void createYoutuber(Youtuber youtuber) {
@@ -55,12 +50,6 @@ public class DAOYoutuberRepository implements IDAOYoutuber {
 	@Override
 	public void deleteYoutuber(long pk) {
 		youtuberRepository.deleteById(pk);
-	}
-
-	@Override
-	public void suscribeToAChannel(Youtuber youtuber, Channel channel) {
-		channel.getSuscribers().add(youtuber.getSuscriber());
-		channelRepository.save(channel);
 	}
 
 }
