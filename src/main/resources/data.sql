@@ -20,16 +20,16 @@ insert into YOUTUBER (id, username, email, password, is_admin, register_date, la
 insert into YOUTUBER (id, username, email, password, is_admin, register_date, last_login, suscriber_id) values (9, 'kbreacher8', 'ileber8@prlog.org', '3NSCi01RHMNF', false, '2021-06-02 04:01:14', '2022-05-22 16:45:21', 9);
 insert into YOUTUBER (id, username, email, password, is_admin, register_date, last_login, suscriber_id) values (10, 'egorioli9', 'dplumridege9@lulu.com', 'CZ8t8VyL', true, '2021-12-08 07:24:48', '2022-05-22 15:30:31', 10);
 
-insert into CHANNEL (youtuber_id, name) values (1, 'Mat Lam Tam');
-insert into CHANNEL (youtuber_id, name) values (2, 'Andalax');
-insert into CHANNEL (youtuber_id, name) values (3, 'Flowdesk');
-insert into CHANNEL (youtuber_id, name) values (4, 'Prodder');
-insert into CHANNEL (youtuber_id, name) values (5, 'Daltfresh');
-insert into CHANNEL (youtuber_id, name) values (6, 'Cardify');
-insert into CHANNEL (youtuber_id, name) values (7, 'Keylex');
-insert into CHANNEL (youtuber_id, name) values (8, 'Tres-Zap');
-insert into CHANNEL (youtuber_id, name) values (9, 'Stronghold');
-insert into CHANNEL (youtuber_id, name) values (10, 'Namfix');
+insert into CHANNEL (youtuber_id, name, is_public) values (1, 'Mat Lam Tam', true);
+insert into CHANNEL (youtuber_id, name, is_public) values (2, 'Andalax', false);
+insert into CHANNEL (youtuber_id, name, is_public) values (3, 'Flowdesk', true);
+insert into CHANNEL (youtuber_id, name, is_public) values (4, 'Prodder', false);
+insert into CHANNEL (youtuber_id, name, is_public) values (5, 'Daltfresh', true);
+insert into CHANNEL (youtuber_id, name, is_public) values (6, 'Cardify', false);
+insert into CHANNEL (youtuber_id, name, is_public) values (7, 'Keylex', true);
+insert into CHANNEL (youtuber_id, name, is_public) values (8, 'Tres-Zap', false);
+insert into CHANNEL (youtuber_id, name, is_public) values (9, 'Stronghold', true);
+insert into CHANNEL (youtuber_id, name, is_public) values (10, 'Namfix', false);
 
 insert into CHANNEL_SUSCRIBERS (youtuber_id, suscriber_id) values (1, 6);
 insert into CHANNEL_SUSCRIBERS (youtuber_id, suscriber_id) values (1, 8);

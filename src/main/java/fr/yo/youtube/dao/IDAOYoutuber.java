@@ -2,6 +2,7 @@ package fr.yo.youtube.dao;
 
 import java.util.List;
 
+import fr.yo.youtube.entities.Channel;
 import fr.yo.youtube.entities.Youtuber;
 
 //TODO ajouter les crud de base que l'on a besoins -> classe servant à l'impl de la dao
@@ -37,4 +38,10 @@ public interface IDAOYoutuber {
 	 * delete a youtuber by his ID
 	 */
 	public void deleteYoutuber(long pk);
+
+	/**
+	 * Suscribe to a channel
+	 */
+	public void suscribeToAChannel(Youtuber youtuber, Channel channel);
+
 }

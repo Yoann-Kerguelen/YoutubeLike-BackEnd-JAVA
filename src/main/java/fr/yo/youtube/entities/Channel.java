@@ -34,6 +34,8 @@ public class Channel implements Serializable {
 
 	private String name;
 
+	private boolean isPublic;
+
 	@OneToOne
 	@MapsId
 	@JoinColumn(name = "youtuber_id")
