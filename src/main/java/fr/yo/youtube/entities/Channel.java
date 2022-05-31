@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -18,11 +19,13 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString
 @Table(name = "Channel")
 public class Channel implements Serializable {
 
@@ -41,10 +44,10 @@ public class Channel implements Serializable {
 	@JoinColumn(name = "youtuber_id")
 	private Youtuber youtuber;
 
-	@OneToMany(mappedBy = "channel")
+	@OneToMany(mappedBy = "channel", orphanRemoval = true)
 	private List<Video> videoList;
 
-	@ManyToMany(cascade = { CascadeType.ALL })
+	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.REMOVE }, fetch = FetchType.EAGER)
 	@JoinTable(name = "channel_suscribers", joinColumns = @JoinColumn(name = "youtuber_id"), inverseJoinColumns = @JoinColumn(name = "suscriber_id"))
 	private List<Suscriber> suscribers;
 

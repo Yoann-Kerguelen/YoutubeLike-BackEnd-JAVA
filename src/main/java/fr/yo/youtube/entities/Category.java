@@ -13,11 +13,13 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString
 @Table(name = "Category")
 public class Category implements Serializable {
 
@@ -29,7 +31,7 @@ public class Category implements Serializable {
 
 	private String denominate;
 
-	@OneToMany(mappedBy = "category")
+	@OneToMany(mappedBy = "category", orphanRemoval = true)
 	private List<Video> videoList;
 
 	public Category(String denominate, List<Video> videoList) {

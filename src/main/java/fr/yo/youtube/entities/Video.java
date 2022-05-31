@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,11 +19,13 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString
 @Table(name = "Video")
 public class Video implements Serializable {
 
@@ -50,15 +53,15 @@ public class Video implements Serializable {
 
 	private Date uploadedDate;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "youtuber_id", nullable = false)
 	private Channel channel;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "category_id", nullable = false)
 	private Category category;
 
-	@OneToMany(mappedBy = "video")
+	@OneToMany(mappedBy = "video", orphanRemoval = true)
 	private List<Reviews> reviews;
 
 	public Video(String title, int duration, String url, String description, long likes, long dislikes, long views,

@@ -19,18 +19,44 @@ public class YoutuberManager {
 	DAO dao;
 
 	/**
-	 * get youtuber by his ID
+	 * create a youtuber
 	 */
-	public Youtuber getYoutuber(long id) {
-		return dao.getDAOYoutuber().getYoutuberByID(id);
+	public void createYoutuber(Youtuber youtuber) {
+		dao.getDAOYoutuber().createYoutuber(youtuber);
 	}
 
 	/**
-	 * get all youtuber in a list
+	 * get all youtubers in a list
 	 */
 	public List<Youtuber> getAllYoutuber() {
 		return dao.getDAOYoutuber().getAllYoutuber();
 	}
 
-	// TODO suite à faire ...
+	/**
+	 * get a youtuber by his ID
+	 */
+	public Youtuber getYoutuberByID(long pk) {
+		return dao.getDAOYoutuber().getYoutuberByID(pk);
+	}
+
+	/**
+	 * get a youtuber by his Username
+	 */
+	public Youtuber getYoutuberByUsername(String username) {
+		return dao.getDAOYoutuber().getYoutuberByUsername(username);
+	}
+
+	/**
+	 * update a youtuber
+	 */
+	public void updateYoutuber(Youtuber youtuber) {
+		dao.getDAOYoutuber().updateYoutuber(youtuber);
+	}
+
+	/**
+	 * delete a youtuber by his ID
+	 */
+	public void deleteYoutuber(long pk) {
+		dao.getDAOYoutuber().deleteYoutuber(pk);
+	}
 }

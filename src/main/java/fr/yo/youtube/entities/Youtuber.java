@@ -18,11 +18,13 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString
 @Table(name = "Youtuber")
 public class Youtuber implements Serializable {
 
@@ -52,7 +54,7 @@ public class Youtuber implements Serializable {
 	@JoinColumn(name = "suscriber_id")
 	private Suscriber suscriber;
 
-	@OneToMany(mappedBy = "youtuber")
+	@OneToMany(mappedBy = "youtuber", orphanRemoval = true)
 	private List<Reviews> reviewsList;
 
 	public Youtuber(String username, String email, String password, boolean isAdmin, Date registerDate, Date lastLogin,

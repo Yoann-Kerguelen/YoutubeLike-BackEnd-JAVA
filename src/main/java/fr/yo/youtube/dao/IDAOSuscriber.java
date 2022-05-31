@@ -6,6 +6,7 @@ import fr.yo.youtube.entities.Suscriber;
 //TODO ajouter les crud de base que l'on a besoins -> classe servant à l'impl de la dao
 
 public interface IDAOSuscriber {
+
 	/**
 	 * Suscribe to a channel
 	 */
