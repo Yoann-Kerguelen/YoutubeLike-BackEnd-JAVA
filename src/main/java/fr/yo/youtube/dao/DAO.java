@@ -26,10 +26,6 @@ public class DAO {
 	private IDAOCategory daoCategory;
 
 	@Autowired
-	@Qualifier("ReviewsHibernate")
-	private IDAOReviews daoReviews;
-
-	@Autowired
 	@Qualifier("SuscriberHibernate")
 	private IDAOSuscriber daoSuscriber;
 
@@ -47,10 +43,6 @@ public class DAO {
 
 	public IDAOCategory getDAOCategory() {
 		return daoCategory;
-	}
-
-	public IDAOReviews getDAOReviews() {
-		return daoReviews;
 	}
 
 	public IDAOSuscriber getDAOSuscriber() {

@@ -23,9 +23,6 @@ public class DAOManager {
 	private CategoryManager categoryManager;
 
 	@Autowired
-	private ReviewsManager reviewsManager;
-
-	@Autowired
 	private SuscriberManager suscriberManager;
 
 	public YoutuberManager getYoutuberManager() {
@@ -42,10 +39,6 @@ public class DAOManager {
 
 	public CategoryManager getCategoryManager() {
 		return categoryManager;
-	}
-
-	public ReviewsManager getReviewsManager() {
-		return reviewsManager;
 	}
 
 	public SuscriberManager getSuscriberManager() {
