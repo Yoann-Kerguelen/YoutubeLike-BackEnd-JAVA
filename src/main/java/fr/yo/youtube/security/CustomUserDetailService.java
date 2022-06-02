@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.stereotype.Service;
 
 import fr.yo.youtube.bll.DAOManager;
@@ -23,17 +24,19 @@ public class CustomUserDetailService implements UserDetailsService {
 		if (youtuber == null) {
 			throw new UsernameNotFoundException(email);
 		}
-		
+		 
 		if (youtuber.isAdmin() == true) {
 			return User
 					.withUsername(youtuber.getEmail())
-					.password("{noop}" + youtuber.getPassword())
+					.password(PasswordEncoderFactories.createDelegatingPasswordEncoder().encode(youtuber.getPassword()))
+					//.password("{noop}" + youtuber.getPassword())
 					.roles("ADMIN", "USER")
 					.build();
 		} else {
 			return User
 					.withUsername(youtuber.getEmail())
-					.password("{noop}" + youtuber.getPassword())
+					.password(PasswordEncoderFactories.createDelegatingPasswordEncoder().encode(youtuber.getPassword()))
+					//.password("{noop}" + youtuber.getPassword())
 					.roles("USER")
 					.build();
 		}

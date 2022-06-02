@@ -54,13 +54,6 @@ public class YoutuberManager {
 	}
 
 	/**
-	 * get a youtuber by his email and password
-	 */
-	public Youtuber getYoutuberByEmailAndPassword(String email, String password) {
-		return dao.getDAOYoutuber().getYoutuberByEmailAndPassword(email, password);
-	}
-
-	/**
 	 * update a youtuber
 	 */
 	public void updateYoutuber(Youtuber youtuber) {
