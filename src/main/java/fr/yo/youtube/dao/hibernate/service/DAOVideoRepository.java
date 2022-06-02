@@ -8,10 +8,11 @@ import org.springframework.stereotype.Service;
 
 import fr.yo.youtube.dao.IDAOVideo;
 import fr.yo.youtube.dao.hibernate.VideoRepository;
+import fr.yo.youtube.entities.Category;
 import fr.yo.youtube.entities.Video;
 
 /**
- * La classe sevant à récupérer le repo et l'utiliser pour les crud demander par
+ * La classe sevant ï¿½ rï¿½cupï¿½rer le repo et l'utiliser pour les crud demander par
  * IDAOVideo
  */
 
@@ -45,6 +46,18 @@ public class DAOVideoRepository implements IDAOVideo {
 	@Override
 	public void deleteVideo(long pk) {
 		videoRepository.deleteById(pk);
+	}
+
+	@Override
+	public List<Category> selectAllCategory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Category selectCategoryById(long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

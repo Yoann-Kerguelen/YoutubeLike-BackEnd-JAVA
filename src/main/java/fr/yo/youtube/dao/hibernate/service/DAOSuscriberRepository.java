@@ -1,5 +1,7 @@
 package fr.yo.youtube.dao.hibernate.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -10,7 +12,7 @@ import fr.yo.youtube.entities.Channel;
 import fr.yo.youtube.entities.Suscriber;
 
 /**
- * La classe sevant à récupérer le repo et l'utiliser pour les crud demander par
+ * La classe sevant ï¿½ rï¿½cupï¿½rer le repo et l'utiliser pour les crud demander par
  * IDAOSuscriber
  */
 
@@ -31,6 +33,18 @@ public class DAOSuscriberRepository implements IDAOSuscriber {
 	public void unSuscribeToAChannel(Suscriber suscriber, Channel channel) {
 		suscriber.getChannelsSubscriptions().remove(channel);
 		suscriberRepository.save(suscriber);
+	}
+
+	@Override
+	public List<Suscriber> selectAllSuscriber() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Suscriber selectSuscriberById(long id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

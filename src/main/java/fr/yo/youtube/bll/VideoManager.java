@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.yo.youtube.dao.DAO;
+import fr.yo.youtube.entities.Suscriber;
 import fr.yo.youtube.entities.Video;
+import fr.yo.youtube.bll.utils.VideoFormDataContainer;
 
 /**
- * Classe servant à faire les functions de video pour l'ihm
+ * Classe servant ï¿½ faire les functions de video pour l'ihm
  **/
 
 @Service
@@ -51,5 +53,16 @@ public class VideoManager {
 	 */
 	public void deleteVideo(long pk) {
 		dao.getDAOVideo().deleteVideo(pk);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public VideoFormDataContainer getVideoFormSetting() {
+		VideoFormDataContainer videoSetting = new VideoFormDataContainer();
+		
+		videoSetting.suscriberList = (List<Suscriber>)(List<?>) dao.getDAOSuscriber().selectAllSuscriber();
+		
+		videoSetting.categoryList = dao.getDAOVideo().selectAllCategory();
+		
+		return videoSetting;
 	}
 }

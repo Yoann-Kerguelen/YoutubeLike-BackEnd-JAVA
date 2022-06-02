@@ -2,9 +2,10 @@ package fr.yo.youtube.dao;
 
 import java.util.List;
 
+import fr.yo.youtube.entities.Category;
 import fr.yo.youtube.entities.Video;
 
-//TODO ajouter les crud de base que l'on a besoins -> classe servant à l'impl de la dao
+//TODO ajouter les crud de base que l'on a besoins -> classe servant ï¿½ l'impl de la dao
 
 public interface IDAOVideo {
 
@@ -32,5 +33,11 @@ public interface IDAOVideo {
 	 * delete a video
 	 */
 	public void deleteVideo(long pk);
+	
+	/**
+	 * get category
+	 */
+	public List <Category> selectAllCategory();
+	public Category selectCategoryById(long id);
 
 }
