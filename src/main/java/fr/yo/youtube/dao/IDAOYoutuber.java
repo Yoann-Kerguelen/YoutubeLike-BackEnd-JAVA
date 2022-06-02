@@ -29,14 +29,9 @@ public interface IDAOYoutuber {
 	public Youtuber getYoutuberByUsername(String username);
 
 	/**
-	 * get a youtuber by his Username
+	 * get a youtuber by his Email
 	 */
 	public Youtuber getYoutuberByEmail(String email);
-
-	/**
-	 * get a youtuber by his Username
-	 */
-	public Youtuber getYoutuberByEmailAndPassword(String email, String password);
 
 	/**
 	 * update a youtuber
