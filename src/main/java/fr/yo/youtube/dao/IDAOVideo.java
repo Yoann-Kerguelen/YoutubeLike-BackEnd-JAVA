@@ -2,6 +2,7 @@ package fr.yo.youtube.dao;
 
 import java.util.List;
 
+import fr.yo.youtube.entities.Reviews;
 import fr.yo.youtube.entities.Video;
 
 //TODO ajouter les crud de base que l'on a besoins -> classe servant à l'impl de la dao
@@ -33,4 +34,8 @@ public interface IDAOVideo {
 	 */
 	public void deleteVideo(long pk);
 
+	/**
+	 * add reviews
+	 */
+	public void addReviews(Reviews reviews, Video video);
 }

@@ -43,6 +43,16 @@ public class DAOYoutuberRepository implements IDAOYoutuber {
 	}
 
 	@Override
+	public Youtuber getYoutuberByEmail(String email) {
+		return youtuberRepository.findByEmail(email);
+	}
+
+	@Override
+	public Youtuber getYoutuberByEmailAndPassword(String email, String password) {
+		return youtuberRepository.findByEmailAndPassword(email, password);
+	}
+
+	@Override
 	public void updateYoutuber(Youtuber youtuber) {
 		youtuberRepository.save(youtuber);
 	}

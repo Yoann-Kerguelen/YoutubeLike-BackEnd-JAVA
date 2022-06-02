@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import fr.yo.youtube.dao.DAO;
+import fr.yo.youtube.entities.Reviews;
 import fr.yo.youtube.entities.Video;
 
 /**
@@ -51,5 +52,12 @@ public class VideoManager {
 	 */
 	public void deleteVideo(long pk) {
 		dao.getDAOVideo().deleteVideo(pk);
+	}
+
+	/**
+	 * add a review
+	 */
+	public void addReviews(Reviews reviews, Video video) {
+		dao.getDAOVideo().addReviews(reviews, video);
 	}
 }

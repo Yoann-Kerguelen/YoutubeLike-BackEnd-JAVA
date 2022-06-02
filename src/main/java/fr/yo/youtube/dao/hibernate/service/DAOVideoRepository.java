@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import fr.yo.youtube.dao.IDAOVideo;
 import fr.yo.youtube.dao.hibernate.VideoRepository;
+import fr.yo.youtube.entities.Reviews;
 import fr.yo.youtube.entities.Video;
 
 /**
@@ -45,6 +46,12 @@ public class DAOVideoRepository implements IDAOVideo {
 	@Override
 	public void deleteVideo(long pk) {
 		videoRepository.deleteById(pk);
+	}
+
+	@Override
+	public void addReviews(Reviews reviews, Video video) {
+		video.getReviews().add(reviews);
+		videoRepository.save(video);
 	}
 
 }

@@ -9,8 +9,8 @@ insert into SUSCRIBER (id) values (8);
 insert into SUSCRIBER (id) values (9);
 insert into SUSCRIBER (id) values (10);
 
-insert into YOUTUBER (id, username, email, password, is_admin, register_date, last_login, suscriber_id) values (1, 'idunne0', 'nmcilherran0@huffingtonpost.com', '4xDv72SPxAo', false, '2021-09-05 05:41:20', '2022-05-22 19:36:07', 1);
-insert into YOUTUBER (id, username, email, password, is_admin, register_date, last_login, suscriber_id) values (2, 'cmaccahee1', 'blakenden1@eventbrite.com', 'ZAk1d9KIG0', true, '2021-12-28 05:33:08', '2022-05-22 10:20:47', 2);
+insert into YOUTUBER (id, username, email, password, is_admin, register_date, last_login, suscriber_id) values (1, 'idunne0', 'nmcilherran0@huffingtonpost.com', '123', false, '2021-09-05 05:41:20', '2022-05-22 19:36:07', 1);
+insert into YOUTUBER (id, username, email, password, is_admin, register_date, last_login, suscriber_id) values (2, 'cmaccahee1', 'blakenden1@eventbrite.com', '123', true, '2021-12-28 05:33:08', '2022-05-22 10:20:47', 2);
 insert into YOUTUBER (id, username, email, password, is_admin, register_date, last_login, suscriber_id) values (3, 'tleteurtre2', 'ccambden2@adobe.com', 'GOqKUcIB2', true, '2021-10-26 03:35:42', '2022-05-22 01:52:35', 3);
 insert into YOUTUBER (id, username, email, password, is_admin, register_date, last_login, suscriber_id) values (4, 'ehagley3', 'lwayt3@state.tx.us', 'gw7IqN1D', true, '2022-05-13 06:37:30', '2022-05-22 17:40:51', 4);
 insert into YOUTUBER (id, username, email, password, is_admin, register_date, last_login, suscriber_id) values (5, 'bcoats4', 'ccarnier4@nps.gov', 'Jz2ypVyfyP', false, '2022-03-20 01:10:11', '2022-05-22 20:03:54', 5);
