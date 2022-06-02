@@ -13,4 +13,8 @@ import fr.yo.youtube.entities.Youtuber;
 public interface YoutuberRepository extends CrudRepository<Youtuber, Long> {
 
 	public Youtuber findByUsername(String username);
+
+	public Youtuber findByEmail(String email);
+
+	public Youtuber findByEmailAndPassword(String email, String password);
 }

@@ -29,6 +29,16 @@ public interface IDAOYoutuber {
 	public Youtuber getYoutuberByUsername(String username);
 
 	/**
+	 * get a youtuber by his Username
+	 */
+	public Youtuber getYoutuberByEmail(String email);
+
+	/**
+	 * get a youtuber by his Username
+	 */
+	public Youtuber getYoutuberByEmailAndPassword(String email, String password);
+
+	/**
 	 * update a youtuber
 	 */
 	public void updateYoutuber(Youtuber youtuber);
@@ -37,4 +47,5 @@ public interface IDAOYoutuber {
 	 * delete a youtuber by his ID
 	 */
 	public void deleteYoutuber(long pk);
+
 }
