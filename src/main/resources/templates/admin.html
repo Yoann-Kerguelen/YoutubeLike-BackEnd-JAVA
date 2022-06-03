@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{layouts/main-layout :: main-fragment(  
+                                                ~{::title},
+                                                ~{:: #home-main-content},  
+                                               )}">
 <head>
-<meta charset="ISO-8859-1">
-<title>Administration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Admin</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<h1>page Admin</h1>
+<div id="home-main-content" class="bg-light p-5 rounded">
+   
+</div>
+    <script src="js/app.js"></script>
 </body>
 </html>

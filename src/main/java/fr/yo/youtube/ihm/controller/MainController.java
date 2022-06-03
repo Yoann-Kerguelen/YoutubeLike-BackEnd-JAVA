@@ -24,7 +24,10 @@ public class MainController {
 	public String getPageIndex(Model model, HttpServletRequest request) {
 		Youtuber currentYoutuber = authHelper.getAuth(request);
 
+		model.addAttribute("categoryList", dAOManager.getCategoryManager().getAllCategory());
+
 		model.addAttribute("videoList", dAOManager.getVideoManager().getAllVideo());
+
 		model.addAttribute("currentYoutuber", currentYoutuber);
 
 		return "index";
