@@ -25,7 +25,7 @@ public class CustomUserDetailService implements UserDetailsService {
 			throw new UsernameNotFoundException(email);
 		}
 		 
-		if (youtuber.isAdmin() == true) {
+		if (youtuber.isAdmin()) {
 			return User
 					.withUsername(youtuber.getEmail())
 					.password(PasswordEncoderFactories.createDelegatingPasswordEncoder().encode(youtuber.getPassword()))
